@@ -3,23 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842B1B6725330781002E8171 /* GAValidatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B1B6625330781002E8171 /* GAValidatorApp.swift */; };
-		842B1B6925330781002E8171 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B1B6825330781002E8171 /* ContentView.swift */; };
+		841CB91C25339D0700A0EE90 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CB91B25339D0700A0EE90 /* SettingsView.swift */; };
+		841CB92025339EB000A0EE90 /* GIDSignInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CB91F25339EB000A0EE90 /* GIDSignInButtonView.swift */; };
 		842B1B6B25330781002E8171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842B1B6A25330781002E8171 /* Assets.xcassets */; };
 		842B1B6E25330781002E8171 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842B1B6D25330781002E8171 /* Preview Assets.xcassets */; };
+		842B1B7A25330947002E8171 /* GAValidatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B1B7825330947002E8171 /* GAValidatorApp.swift */; };
+		842B1B7B25330947002E8171 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B1B7925330947002E8171 /* MainContentView.swift */; };
+		842B1B7E25330CAB002E8171 /* TrackerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B1B7D25330CAB002E8171 /* TrackerItemView.swift */; };
+		842B1B8425337A65002E8171 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B1B8325337A65002E8171 /* UseCase.swift */; };
+		84BEC636254D7BB0007F515B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC635254D7BB0007F515B /* SettingsController.swift */; };
+		84BEC640254D8C04007F515B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC63F254D8C04007F515B /* AppDelegate.swift */; };
+		C863EB349FAB34C4E79E194F /* Pods_GAValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F91E911AA739B278A4260 /* Pods_GAValidator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24FDF832538CA2C6671034E6 /* Pods-GAValidator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAValidator.release.xcconfig"; path = "Target Support Files/Pods-GAValidator/Pods-GAValidator.release.xcconfig"; sourceTree = "<group>"; };
+		2FA3B7C47F5C8E98A0A1EA47 /* Pods-GAValidator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAValidator.debug.xcconfig"; path = "Target Support Files/Pods-GAValidator/Pods-GAValidator.debug.xcconfig"; sourceTree = "<group>"; };
+		841CB91B25339D0700A0EE90 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		841CB91F25339EB000A0EE90 /* GIDSignInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIDSignInButtonView.swift; sourceTree = "<group>"; };
 		842B1B6325330781002E8171 /* GAValidator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAValidator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		842B1B6625330781002E8171 /* GAValidatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAValidatorApp.swift; sourceTree = "<group>"; };
-		842B1B6825330781002E8171 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		842B1B6A25330781002E8171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842B1B6D25330781002E8171 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		842B1B6F25330781002E8171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842B1B7825330947002E8171 /* GAValidatorApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAValidatorApp.swift; sourceTree = "<group>"; };
+		842B1B7925330947002E8171 /* MainContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		842B1B7D25330CAB002E8171 /* TrackerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerItemView.swift; sourceTree = "<group>"; };
+		842B1B8325337A65002E8171 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		84BEC635254D7BB0007F515B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		84BEC63F254D8C04007F515B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE5F91E911AA739B278A4260 /* Pods_GAValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GAValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C863EB349FAB34C4E79E194F /* Pods_GAValidator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841CB91A25339CEC00A0EE90 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				841CB91B25339D0700A0EE90 /* SettingsView.swift */,
+				841CB91F25339EB000A0EE90 /* GIDSignInButtonView.swift */,
+				84BEC635254D7BB0007F515B /* SettingsController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		842B1B5A25330781002E8171 = {
 			isa = PBXGroup;
 			children = (
 				842B1B6525330781002E8171 /* GAValidator */,
 				842B1B6425330781002E8171 /* Products */,
+				D2D3265BB8065442C602D7F0 /* Pods */,
+				D5E38DD96B0301081CC0BF7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +81,14 @@
 		842B1B6525330781002E8171 /* GAValidator */ = {
 			isa = PBXGroup;
 			children = (
-				842B1B6625330781002E8171 /* GAValidatorApp.swift */,
-				842B1B6825330781002E8171 /* ContentView.swift */,
+				841CB91A25339CEC00A0EE90 /* Settings */,
+				842B1B7725330947002E8171 /* MainView */,
 				842B1B6A25330781002E8171 /* Assets.xcassets */,
 				842B1B6F25330781002E8171 /* Info.plist */,
 				842B1B6C25330781002E8171 /* Preview Content */,
+				842B1B8325337A65002E8171 /* UseCase.swift */,
+				842B1B7825330947002E8171 /* GAValidatorApp.swift */,
+				84BEC63F254D8C04007F515B /* AppDelegate.swift */,
 			);
 			path = GAValidator;
 			sourceTree = "<group>";
@@ -69,6 +101,32 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		842B1B7725330947002E8171 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				842B1B7925330947002E8171 /* MainContentView.swift */,
+				842B1B7D25330CAB002E8171 /* TrackerItemView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		D2D3265BB8065442C602D7F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FA3B7C47F5C8E98A0A1EA47 /* Pods-GAValidator.debug.xcconfig */,
+				24FDF832538CA2C6671034E6 /* Pods-GAValidator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D5E38DD96B0301081CC0BF7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F91E911AA739B278A4260 /* Pods_GAValidator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842B1B7225330781002E8171 /* Build configuration list for PBXNativeTarget "GAValidator" */;
 			buildPhases = (
+				58C848245D7C35E2159C03F7 /* [CP] Check Pods Manifest.lock */,
 				842B1B5F25330781002E8171 /* Sources */,
 				842B1B6025330781002E8171 /* Frameworks */,
 				842B1B6125330781002E8171 /* Resources */,
+				94A3E6A67B56C32154C5AA06 /* [CP] Embed Pods Frameworks */,
+				61EA7E65FCDEE6C416D44E82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,13 +194,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58C848245D7C35E2159C03F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GAValidator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61EA7E65FCDEE6C416D44E82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GAValidator/Pods-GAValidator-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GAValidator/Pods-GAValidator-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GAValidator/Pods-GAValidator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94A3E6A67B56C32154C5AA06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GAValidator/Pods-GAValidator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GAValidator/Pods-GAValidator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GAValidator/Pods-GAValidator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		842B1B5F25330781002E8171 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842B1B6925330781002E8171 /* ContentView.swift in Sources */,
-				842B1B6725330781002E8171 /* GAValidatorApp.swift in Sources */,
+				84BEC640254D8C04007F515B /* AppDelegate.swift in Sources */,
+				841CB91C25339D0700A0EE90 /* SettingsView.swift in Sources */,
+				842B1B7A25330947002E8171 /* GAValidatorApp.swift in Sources */,
+				842B1B8425337A65002E8171 /* UseCase.swift in Sources */,
+				84BEC636254D7BB0007F515B /* SettingsController.swift in Sources */,
+				841CB92025339EB000A0EE90 /* GIDSignInButtonView.swift in Sources */,
+				842B1B7B25330947002E8171 /* MainContentView.swift in Sources */,
+				842B1B7E25330CAB002E8171 /* TrackerItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +390,7 @@
 		};
 		842B1B7325330781002E8171 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA3B7C47F5C8E98A0A1EA47 /* Pods-GAValidator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -285,6 +412,7 @@
 		};
 		842B1B7425330781002E8171 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24FDF832538CA2C6671034E6 /* Pods-GAValidator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

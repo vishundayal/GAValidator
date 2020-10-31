@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct SettingsView: View {
+    let signInButton = GIDSignInButtonView()
+    @State var isPresented = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        signInButton
+            .makeStye(style: .wide)
+            .makeColorScheme(scheme: .light)
     }
+    
 }
 
 struct SettingsView_Previews: PreviewProvider {
