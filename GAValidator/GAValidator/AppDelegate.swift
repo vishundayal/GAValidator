@@ -13,11 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
-        let scope = "https://www.googleapis.com/auth/analytics.readonly"
-        var scopes = GIDSignIn.sharedInstance()?.scopes ?? []
-        scopes.append(scope)
-        GIDSignIn.sharedInstance()?.scopes = scopes
         return true
     }
 

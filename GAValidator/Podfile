@@ -9,6 +9,3 @@ target 'GAValidator' do
   pod 'FLEX', '~> 4.2.1' , :configurations => ['Debug']
 
 end
-
-
-22727812

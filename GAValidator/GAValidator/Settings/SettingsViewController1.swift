@@ -18,7 +18,7 @@ import GoogleSignIn
 },
  */
 class SettingsViewController: UIViewController, GIDSignInDelegate {
-    let signInButton = UIButton()
+    @IBOutlet var signInButton:GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +28,18 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
     }
 
     func setupGoogleSignIn() {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
         view.addSubview(signInButton)
-        signInButton.setTitle("Nai dikhne wala button", for: UIControl.State.normal)
-        signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
-        signInButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        signInButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//        signInButton.style = .wide
-//        signInButton.colorScheme = .light
-        
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        signInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+//        signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+        signInButton.style = .wide
+        signInButton.colorScheme = .light
+        GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
+        let scope = "https://www.googleapis.com/auth/analytics.readonly"
+        var scopes = GIDSignIn.sharedInstance()?.scopes ?? []
+        scopes.append(scope)
+        GIDSignIn.sharedInstance()?.scopes = scopes
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
@@ -72,7 +74,7 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
     @IBAction func validateTrackerGA() {
         let semaphore = DispatchSemaphore (value: 0)
         var urlComponent = URLComponents(string: "https://www.googleapis.com/analytics/v3/data/ga")!
-        let qi1 = URLQueryItem(name: "ids", value: "ga:100593946")
+        let qi1 = URLQueryItem(name: "ids", value: "ga:197012468")
         let qi2 = URLQueryItem(name: "metrics", value: "ga:transactions")
         let qi3 = URLQueryItem(name: "dimensions", value: "ga:transactionId")
         let qi4 = URLQueryItem(name: "filters", value: "ga:transactionId==17081602")
@@ -103,13 +105,13 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
         func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
             if error == nil, let token = user.authentication.accessToken {
                 print("Did sign in with access token \(token)")
-                signInButton.isEnabled = false
+//                signInButton.isEnabled = false
             } else {
               print("\(error.localizedDescription)")
             }
         }
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-            signInButton.isEnabled = true
+//            signInButton.isEnabled = true
             print("Did disconnected")
         }
 

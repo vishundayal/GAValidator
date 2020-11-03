@@ -9,12 +9,17 @@ import UIKit
 class TrackersViewController: UIViewController {
     let scrollView = UIScrollView()
     let stackView = UIStackView()
+    let usecase = TrackerUseCase()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         populateTrackers()
         title = "Trackers"
         addNavigationBarItems()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        usecase.validateTrackerGA()
     }
     func addNavigationBarItems() {
         let settings = UIBarButtonItem(image:#imageLiteral(resourceName: "gear.png"), style: .done, target: self, action: #selector(goSettings))
