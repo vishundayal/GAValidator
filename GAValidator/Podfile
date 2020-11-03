@@ -6,5 +6,9 @@ target 'GAValidator' do
   use_frameworks!
 
   pod 'GoogleSignIn'
+  pod 'FLEX', '~> 4.2.1' , :configurations => ['Debug']
 
 end
+
+
+22727812
