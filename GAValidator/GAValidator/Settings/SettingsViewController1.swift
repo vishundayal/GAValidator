@@ -19,6 +19,8 @@ import GoogleSignIn
  */
 class SettingsViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet var signInButton:GIDSignInButton!
+    let useCase = SettingsUseCase()
+    var account: AccountSummary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,8 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
         view.addSubview(signInButton)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        signInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
-//        signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+//        signInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
         signInButton.style = .wide
         signInButton.colorScheme = .light
         GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
@@ -44,7 +46,18 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance().presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
-    
+    func doLogin() {
+        
+    }
+    @IBAction func getAccountSummary() {
+        useCase.getAccountSummaries { (summary) in
+            debugPrint(summary)
+        }
+    }
+    @IBAction func logout() {
+        GIDSignIn.sharedInstance()?.signOut()
+    }
+    /*
     @IBAction func validateTrackerRealtime() {
         let semaphore = DispatchSemaphore (value: 0)
         var urlComponent = URLComponents(string: "https://www.googleapis.com/analytics/v3/data/realtime")!
@@ -98,20 +111,20 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
         semaphore.wait()
 
     }
-    
+ */
     
     
     // MARK: GIDSignInDelegate
         func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
             if error == nil, let token = user.authentication.accessToken {
                 print("Did sign in with access token \(token)")
-//                signInButton.isEnabled = false
+                signInButton.isEnabled = false
             } else {
               print("\(error.localizedDescription)")
             }
         }
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-//            signInButton.isEnabled = true
+            signInButton.isEnabled = true
             print("Did disconnected")
         }
 

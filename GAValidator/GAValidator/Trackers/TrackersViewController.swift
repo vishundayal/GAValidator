@@ -19,7 +19,7 @@ class TrackersViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        usecase.validateTrackerGA()
+        usecase.validateTrackerRealtime()
     }
     func addNavigationBarItems() {
         let settings = UIBarButtonItem(image:#imageLiteral(resourceName: "gear.png"), style: .done, target: self, action: #selector(goSettings))

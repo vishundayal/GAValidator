@@ -20,14 +20,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D1R-RM-7zX" customClass="GIDSignInButton">
-                    <rect key="frame" x="75" y="103" width="240" height="128"/>
+                    <rect key="frame" x="87" y="198" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N3-7k-IGs">
+                    <rect key="frame" x="107" y="433" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="6uW-Yi-w9t"/>
+                    </constraints>
+                    <state key="normal" title="Logout"/>
+                    <connections>
+                        <action selector="logout" destination="-1" eventType="touchUpInside" id="hbt-jJ-ZJm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yef-pH-aWo">
+                    <rect key="frame" x="107" y="588" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="PBR-7h-Iua"/>
+                    </constraints>
+                    <state key="normal" title="Account Summary"/>
+                    <connections>
+                        <action selector="getAccountSummary" destination="-1" eventType="touchUpInside" id="Nvl-J7-2JD"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="119" y="58"/>
+            <constraints>
+                <constraint firstItem="5N3-7k-IGs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YQh-8g-cPO"/>
+                <constraint firstItem="5N3-7k-IGs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Zhh-yL-BQ9"/>
+                <constraint firstItem="Yef-pH-aWo" firstAttribute="top" secondItem="5N3-7k-IGs" secondAttribute="bottom" constant="125" id="ine-ea-MJ3"/>
+                <constraint firstItem="Yef-pH-aWo" firstAttribute="top" secondItem="5N3-7k-IGs" secondAttribute="bottom" constant="125" id="ohc-lm-t3p"/>
+                <constraint firstItem="Yef-pH-aWo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rvj-jV-RjX"/>
+            </constraints>
+            <point key="canvasLocation" x="118.84057971014494" y="57.589285714285708"/>
         </view>
     </objects>
     <resources>

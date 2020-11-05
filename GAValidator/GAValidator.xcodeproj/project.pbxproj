@@ -10,6 +10,8 @@
 		843CD6F4254E731400FD29EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CD6F3254E731300FD29EA /* SceneDelegate.swift */; };
 		843CD6FE254E8F9100FD29EA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CD6FD254E8F9100FD29EA /* UIView+Shadow.swift */; };
 		843CD703254EADCF00FD29EA /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CD701254EADCF00FD29EA /* SettingsViewController.xib */; };
+		8495A0362553CE50007E1F02 /* AccountSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A0352553CE50007E1F02 /* AccountSummary.swift */; };
+		8495A0392553CE75007E1F02 /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A0382553CE75007E1F02 /* SettingsUseCase.swift */; };
 		84BEC640254D8C04007F515B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC63F254D8C04007F515B /* AppDelegate.swift */; };
 		84BEC666254DE53F007F515B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BEC65F254DE53F007F515B /* LaunchScreen.storyboard */; };
 		84BEC669254DE53F007F515B /* SettingsViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC665254DE53F007F515B /* SettingsViewController1.swift */; };
@@ -30,6 +32,8 @@
 		843CD6F3254E731300FD29EA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		843CD6FD254E8F9100FD29EA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		843CD701254EADCF00FD29EA /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		8495A0352553CE50007E1F02 /* AccountSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummary.swift; sourceTree = "<group>"; };
+		8495A0382553CE75007E1F02 /* SettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
 		84BEC63F254D8C04007F515B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BEC660254DE53F007F515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84BEC665254DE53F007F515B /* SettingsViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController1.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			children = (
 				84BEC665254DE53F007F515B /* SettingsViewController1.swift */,
 				843CD701254EADCF00FD29EA /* SettingsViewController.xib */,
+				8495A0352553CE50007E1F02 /* AccountSummary.swift */,
+				8495A0382553CE75007E1F02 /* SettingsUseCase.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 				84BEC67A254DE6A8007F515B /* TrackersViewController.swift in Sources */,
 				84BEC683254DE845007F515B /* TrackerItem.swift in Sources */,
 				84BEC686254DEAF1007F515B /* TrackerItemView.swift in Sources */,
+				8495A0362553CE50007E1F02 /* AccountSummary.swift in Sources */,
 				84BEC669254DE53F007F515B /* SettingsViewController1.swift in Sources */,
+				8495A0392553CE75007E1F02 /* SettingsUseCase.swift in Sources */,
 				843CD6FE254E8F9100FD29EA /* UIView+Shadow.swift in Sources */,
 				843CD6F4254E731400FD29EA /* SceneDelegate.swift in Sources */,
 			);
