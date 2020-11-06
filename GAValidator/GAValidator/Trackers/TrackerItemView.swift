@@ -15,6 +15,7 @@ class TrackerItemView: UIView {
         item = tracker
         super.init(frame: .zero)
         titleLabel.numberOfLines = 0
+        titleLabel.font = .systemFont(ofSize: 12)
         stackView.addSubview(titleLabel)
         configureViews()
         stackView.addArrangedSubview(titleLabel)
@@ -24,9 +25,20 @@ class TrackerItemView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     override func willMove(toSuperview newSuperview: UIView?) {
-        if let data = try? JSONSerialization.data(withJSONObject: item.content, options: JSONSerialization.WritingOptions.prettyPrinted) {
-            titleLabel.text = String(data: data, encoding: .utf8)
+        var title = ""
+        if let name = item.event?.event {
+                title += "\nEvent:\(name)"
         }
+        if let category = item.event?.eventCategory {
+                title += "\nCategory:\(category)"
+        }
+        if let label = item.event?.eventLabel {
+                title += "\nLabel:\(label)"
+        }
+        if let action = item.event?.eventAction {
+                title += "\nAction:\(action)\n"
+        }
+        titleLabel.text = title
     }
     override func didMoveToSuperview() {
         super.didMoveToSuperview()

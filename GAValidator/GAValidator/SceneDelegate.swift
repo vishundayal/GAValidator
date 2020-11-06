@@ -5,6 +5,7 @@
 //  Created by Vishun on 10/10/20.
 //
 
+import GoogleSignIn
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -21,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigation = UINavigationController(rootViewController: TrackersViewController())
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
+        setupGoogleSignIn()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -51,6 +53,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func setupGoogleSignIn() {
+        GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
+        let scope = "https://www.googleapis.com/auth/analytics.readonly"
+        var scopes = GIDSignIn.sharedInstance()?.scopes ?? []
+        scopes.append(scope)
+        GIDSignIn.sharedInstance()?.scopes = scopes
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+    }
 }
 

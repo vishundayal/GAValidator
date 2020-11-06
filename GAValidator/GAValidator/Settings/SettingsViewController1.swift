@@ -19,6 +19,9 @@ import GoogleSignIn
  */
 class SettingsViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet var signInButton:GIDSignInButton!
+    @IBOutlet var accountName:UIButton!
+    @IBOutlet var propertyName:UIButton!
+    @IBOutlet var viewName:UIButton!
     let useCase = SettingsUseCase()
     var account: AccountSummary?
     
@@ -26,32 +29,42 @@ class SettingsViewController: UIViewController, GIDSignInDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Settings"
-        setupGoogleSignIn()
     }
 
-    func setupGoogleSignIn() {
-        view.addSubview(signInButton)
-        signInButton.translatesAutoresizingMaskIntoConstraints = false
-        signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-//        signInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
-        signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
-        signInButton.style = .wide
-        signInButton.colorScheme = .light
-        GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
-        let scope = "https://www.googleapis.com/auth/analytics.readonly"
-        var scopes = GIDSignIn.sharedInstance()?.scopes ?? []
-        scopes.append(scope)
-        GIDSignIn.sharedInstance()?.scopes = scopes
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().presentingViewController = self
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-    }
+//    func setupGoogleSignIn() {
+//        signInButton.style = .wide
+//        signInButton.colorScheme = .light
+//        GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
+//        let scope = "https://www.googleapis.com/auth/analytics.readonly"
+//        var scopes = GIDSignIn.sharedInstance()?.scopes ?? []
+//        scopes.append(scope)
+//        GIDSignIn.sharedInstance()?.scopes = scopes
+//        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().presentingViewController = self
+//        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+//    }
     func doLogin() {
         
     }
     @IBAction func getAccountSummary() {
-        useCase.getAccountSummaries { (summary) in
+        useCase.getAccountSummaries {[weak self] (summary) in
             debugPrint(summary)
+            guard let self = self else {return}
+            self.account = summary
+            DispatchQueue.main.async {
+                self.populateAccDetails()
+            }
+        }
+    }
+    func populateAccDetails() {
+        if let name = self.account?.items?.first?.name {
+            self.accountName.setTitle(name, for: .normal)
+        }
+        if let name =  self.account?.items?.first?.webProperties?.first?.name {
+            self.propertyName.setTitle(name, for: .normal)
+        }
+        if let name =  self.account?.items?.first?.webProperties?.first?.profiles?.first?.name {
+            self.viewName.setTitle(name, for: .normal)
         }
     }
     @IBAction func logout() {
