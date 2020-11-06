@@ -17,10 +17,6 @@ class TrackersViewController: UIViewController {
         title = "Trackers"
         addNavigationBarItems()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        usecase.validateTrackerGA(event: (TrackerMockData().trackers.first?.validator)!)
-    }
     func addNavigationBarItems() {
         let settings = UIBarButtonItem(image:#imageLiteral(resourceName: "gear.png"), style: .done, target: self, action: #selector(goSettings))
         navigationItem.rightBarButtonItem = settings
@@ -29,6 +25,13 @@ class TrackersViewController: UIViewController {
     @objc func goSettings() {
         navigationController?.pushViewController(SettingsViewController(), animated: true)
     }
+    @objc func validateTrackerGA(gesture: UITapGestureRecognizer) {
+        guard let view = gesture.view as? TrackerItemView else {
+            return
+        }
+        usecase.validateTrackerGA(event: view.item.validator!)
+    }
+
     func configureView() {
         self.view.backgroundColor = .white
         self.view.addSubview(scrollView)
@@ -55,7 +58,10 @@ class TrackersViewController: UIViewController {
         TrackerMockData()
             .trackers
             .forEach {
-                stackView.addArrangedSubview(TrackerItemView(tracker: $0))
+                let itemView = TrackerItemView(tracker: $0)
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(validateTrackerGA))
+                itemView.addGestureRecognizer(tapGesture)
+                stackView.addArrangedSubview(itemView)
             }
     }
     

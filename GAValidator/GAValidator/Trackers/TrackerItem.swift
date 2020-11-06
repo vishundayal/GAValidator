@@ -31,9 +31,15 @@ struct TrackerValidator {
     var startDate = Date()
     var endDate = Date()
     init(event: GTMEvent) {
-        metrics = ["ga:totalEvents"]
-        dimensions = ["ga:eventAction", "ga:eventLabel", "ga:eventCategory"]
-        filters = ["ga:eventAction==\(event.eventAction)", "ga:eventCategory==\(event.eventCategory)","ga:eventLabel==\(event.eventLabel)"]
+        if let transactionId = event.transactionId {
+            metrics = ["ga:transactions"]
+            dimensions = ["ga:transactionId"]
+            filters = ["ga:transactionId==\(transactionId)"]
+        } else {
+            metrics = ["ga:totalEvents"]
+            dimensions = ["ga:eventAction", "ga:eventLabel", "ga:eventCategory"]
+            filters = ["ga:eventAction==\(event.eventAction)", "ga:eventCategory==\(event.eventCategory)","ga:eventLabel==\(event.eventLabel)"]
+        }
     }
 }
 
@@ -42,38 +48,18 @@ struct GTMEvent:Decodable {
     let eventCategory: String
     let eventAction: String
     let eventLabel: String
+    let transactionId: String?
     var ecommerce: ECommerce?
     var extras: [String: String]?
-    init(contents:[String:Any]) {
-        event = contents["event"] as? String ?? ""
-        eventCategory = contents["eventCategory"] as? String ?? ""
-        eventLabel = contents["eventLabel"] as? String ?? ""
-        eventAction = contents["eventAction"] as? String ?? ""
-        if let ecom = contents["ecommerce"] as? [String: Any] {
-            ecommerce = ECommerce(contents: ecom)
-        }
-    }
 }
 struct ECommerce: Decodable {
     var products: [Product] = []
     var transactionId: String?
-    init(contents:[String:Any]) {
-        if let prdts = contents["items"] as? [[String:Any]] {
-            prdts.forEach { (dict) in
-                products.append(Product(contents: dict))
-            }
-        }
-    }
 }
 struct Product: Decodable {
     let itemId: String
     let itemName: String
     let price: Float
-    init(contents:[String:Any]) {
-        itemName = contents["item_name"] as? String ?? ""
-        itemId = contents["item_id"]  as? String  ?? ""
-        price = contents["price"]  as? Float ?? 0.0
-    }
 }
 enum TrackerStatus {
     case Verified(state:TrackerVerifiedStatus)
