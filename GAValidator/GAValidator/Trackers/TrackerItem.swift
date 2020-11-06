@@ -11,25 +11,30 @@ struct TrackerItem: Identifiable {
     var id = UUID()
     let content: [String:Any]?
     let status: TrackerStatus
-    let validator = TrackerValidator()
     var event: GTMEvent?
+    var validator: TrackerValidator?
     init(data:Data) {
         content = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any]
         status = .Pending
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        do {
-            event = try decoder.decode(GTMEvent.self, from: data)
-        } catch  {
-            print("Unexpected error: \(error).")
+        if let gtm = try? decoder.decode(GTMEvent.self, from: data) {
+            event = gtm
+            validator = TrackerValidator(event: gtm)
         }
     }
 }
 struct TrackerValidator {
-    let metrics:[String] = []
-    let dimensions:[String] = []
+    let metrics:[String]
+    let dimensions:[String]
+    let filters:[String]
     var startDate = Date()
     var endDate = Date()
+    init(event: GTMEvent) {
+        metrics = ["ga:totalEvents"]
+        dimensions = ["ga:eventAction", "ga:eventLabel", "ga:eventCategory"]
+        filters = ["ga:eventAction==\(event.eventAction)", "ga:eventCategory==\(event.eventCategory)","ga:eventLabel==\(event.eventLabel)"]
+    }
 }
 
 struct GTMEvent:Decodable {

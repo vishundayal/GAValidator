@@ -1,0 +1,26 @@
+{
+  "profileId" : "TKPD_IOS",
+  "event" : "view_item",
+  "paymentId" : "826987038",
+  "businessUnit" : "recharge",
+  "eventCategory" : "order complete",
+  "items" : [
+    {
+      "item_brand" : "indihome / telepon",
+      "index" : 1,
+      "price" : 100000,
+      "item_name" : "telkom",
+      "list" : "/recommendation-order complete-DG",
+      "item_id" : "752",
+      "item_category" : "telkom",
+      "item_variant" : "",
+      "creative_url" : "https://ecs7.tokopedia.net/img/recharge/operator/indihome1.png",
+      "currency" : "IDR"
+    }
+  ],
+  "eventAction" : "impression on widget recommendation",
+  "userId" : "3660643",
+  "eventLabel" : "history - telkom - 1",
+  "sessionIris" : "aW9zLXRva29wZWRpYQ==:BF8D2C3C-AEC0-4CD3-9B3C-05C182CD80A8:1604684018",
+  "currency" : "IDR"
+}

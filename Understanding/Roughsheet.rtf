@@ -4,10 +4,10 @@
 }
 {\colortbl;\red255\green255\blue255;\red230\green230\blue229;\red38\green38\blue38;\red24\green25\blue27;
 \red42\green55\blue62;\red238\green240\blue241;\red255\green255\blue255;\red255\green255\blue255;\red27\green29\blue31;
-\red222\green224\blue226;}
+\red222\green224\blue226;\red38\green38\blue38;}
 {\*\expandedcolortbl;;\cssrgb\c92159\c92159\c91814;\cssrgb\c19912\c19912\c19912;\cssrgb\c12549\c12941\c14118;
 \cssrgb\c21569\c27843\c30980;\cssrgb\c94510\c95294\c95686;\cssrgb\c100000\c100000\c100000\c94902;\cssrgb\c100000\c100000\c100000;\cssrgb\c14118\c15294\c16078;
-\cssrgb\c89412\c90196\c90980;}
+\cssrgb\c89412\c90196\c90980;\cssrgb\c19934\c19934\c19909;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{square\}}{\leveltext\leveltemplateid1\'01\uc0\u9642 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
 \paperw12240\paperh15840\margl1440\margr1440\vieww28600\viewh15280\viewkind0
@@ -60,8 +60,9 @@ Dev Tool - Build something like Google Tag Assistant chrome extension\
 \f0\b\fs36 \cf2 \cb3 \
 Reporting API\
 Error 403\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
-\fs20 \{\
+\fs20 \cf2 \{\
   "error": \{\
     "code": 403,\
     "message": "User does not have sufficient permissions for this profile.",\
@@ -74,8 +75,9 @@ Error 403\
     ]\
   \}\
 \}\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
-\fs36 \
+\fs36 \cf2 \
 \pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
 \f3\b0 \cf2 /*\
@@ -145,8 +147,9 @@ Response\
     ]\
   ]\
 \}\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
-\fs36 \
+\fs36 \cf2 \
 \
 \pard\pardeftab720\sa321\partightenfactor0
 
@@ -167,8 +170,9 @@ Scope: https://www.googleapis.com/auth/analytics.manage.users.readonly\
 
 \f0\b\fs36 \cf2 \cb3 \kerning1\expnd0\expndtw0 \
 Response \
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
-\fs20 \{\
+\fs20 \cf2 \{\
   "kind": "analytics#accounts",\
   "username": "vishun.dayal@tokopedia.com",\
   "totalResults": 2,\
@@ -219,8 +223,9 @@ Scope: \cb7 https://www.googleapis.com/auth/analytics.readonly
 
 \f0\b\fs36 \cf2 \cb3 \kerning1\expnd0\expndtw0 \
 Response\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
-\fs20 \{\
+\fs20 \cf2 \{\
   "kind": "analytics#accountSummaries",\
   "username": "vishun.dayal@tokopedia.com",\
   "totalResults": 2,\
@@ -427,8 +432,9 @@ Response\
     \}\
   ]\
 \}\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 
-\fs36 To create model from Json\
+\fs36 \cf2 To create model from Json\
 \pard\pardeftab720\partightenfactor0
 
 \f3\b0\fs26 \cf9 \cb10 \expnd0\expndtw0\kerning0
@@ -437,6 +443,171 @@ http://www.json4swift.com
 \pard\tx890\pardeftab890\pardirnatural\partightenfactor0
 \cf2 \
 \
+Realtime API \
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\fs20 \cf8 \cb11 \{\
+  "kind": "analytics#realtimeData",\
+  "id": "https://www.googleapis.com/analytics/v3/data/realtime?ids=ga:197012468&dimensions=rt:medium&metrics=rt:activeUsers",\
+  "query": \{\
+    "ids": "ga:197012468",\
+    "dimensions": "rt:medium",\
+    "metrics": [\
+      "rt:activeUsers"\
+    ],\
+    "max-results": 1000\
+  \},\
+  "totalResults": 30,\
+  "selfLink": "https://www.googleapis.com/analytics/v3/data/realtime?ids=ga:197012468&dimensions=rt:medium&metrics=rt:activeUsers",\
+  "profileInfo": \{\
+    "profileId": "197012468",\
+    "accountId": "9801603",\
+    "webPropertyId": "UA-9801603-10",\
+    "internalWebPropertyId": "96430191",\
+    "profileName": "iOS App Behavioral Data",\
+    "tableId": "realtime:197012468"\
+  \},\
+  "columnHeaders": [\
+    \{\
+      "name": "rt:medium",\
+      "columnType": "DIMENSION",\
+      "dataType": "STRING"\
+    \},\
+    \{\
+      "name": "rt:activeUsers",\
+      "columnType": "METRIC",\
+      "dataType": "INTEGER"\
+    \}\
+  ],\
+  "totalsForAllResults": \{\
+    "rt:activeUsers": "13596"\
+  \},\
+  "rows": [\
+    [\
+      "(none)",\
+      "12733"\
+    ],\
+    [\
+      "4JeOwoPX",\
+      "32"\
+    ],\
+    [\
+      "A7YBwu6v",\
+      "4"\
+    ],\
+    [\
+      "CPAS",\
+      "5"\
+    ],\
+    [\
+      "DpJYtGQ6",\
+      "11"\
+    ],\
+    [\
+      "ORGANIC",\
+      "183"\
+    ],\
+    [\
+      "Product",\
+      "2"\
+    ],\
+    [\
+      "REFERRAL",\
+      "33"\
+    ],\
+    [\
+      "RssTljWL",\
+      "17"\
+    ],\
+    [\
+      "SOCIAL",\
+      "4"\
+    ],\
+    [\
+      "Share",\
+      "267"\
+    ],\
+    [\
+      "Shop",\
+      "1"\
+    ],\
+    [\
+      "Shop Share",\
+      "2"\
+    ],\
+    [\
+      "affiliate",\
+      "29"\
+    ],\
+    [\
+      "brand",\
+      "10"\
+    ],\
+    [\
+      "cpc",\
+      "50"\
+    ],\
+    [\
+      "email",\
+      "4"\
+    ],\
+    [\
+      "igstory",\
+      "3"\
+    ],\
+    [\
+      "journeys",\
+      "1"\
+    ],\
+    [\
+      "notset",\
+      "1"\
+    ],\
+    [\
+      "ocpm",\
+      "70"\
+    ],\
+    [\
+      "others",\
+      "2"\
+    ],\
+    [\
+      "push ios",\
+      "2"\
+    ],\
+    [\
+      "push+android",\
+      "1"\
+    ],\
+    [\
+      "push+ios",\
+      "61"\
+    ],\
+    [\
+      "smkol",\
+      "15"\
+    ],\
+    [\
+      "smorg",\
+      "1"\
+    ],\
+    [\
+      "social",\
+      "4"\
+    ],\
+    [\
+      "w2n4e26g",\
+      "24"\
+    ],\
+    [\
+      "web_to_app_journey_banner",\
+      "24"\
+    ]\
+  ]\
+\}\
 \
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\fs36 \cf2 \cb3 \
 \
 }

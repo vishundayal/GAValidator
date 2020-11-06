@@ -8,13 +8,13 @@
 import Foundation
 struct TrackerMockData {
     let items = [
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"],
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"],
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"],
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"],
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"],
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"],
-        ["Metrics":"ga:transactions", "Dimenstions":"ga:transactionId", "Filter":"ga:transactionId==17081602"]
+        "addToCart",
+        "addToCart",
+        "addToCart",
+        "addToCart",
+        "addToCart",
+        "addToCart",
+        "addToCart"
     ]
     var trackers:[TrackerItem] {
         items.compactMap { (item) -> TrackerItem in
