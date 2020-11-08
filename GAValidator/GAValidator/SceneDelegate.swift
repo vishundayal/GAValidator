@@ -43,7 +43,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             debugPrint(analytics)
             
             do {
-                let obj = try JSONSerialization.jsonObject(with: analytics, options: .fragmentsAllowed)
+                let obj = try JSONSerialization.jsonObject(with: analytics, options: .fragmentsAllowed) as! [String : Any]
+                
+                let viewController = JsonPreviewController(json: obj)
+                self.window?.rootViewController?.present(viewController, animated: true, completion: nil)
                 debugPrint(obj)
             } catch {
                 debugPrint(error)

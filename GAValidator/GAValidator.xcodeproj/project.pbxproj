@@ -10,6 +10,8 @@
 		843CD6F4254E731400FD29EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CD6F3254E731300FD29EA /* SceneDelegate.swift */; };
 		843CD6FE254E8F9100FD29EA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CD6FD254E8F9100FD29EA /* UIView+Shadow.swift */; };
 		843CD703254EADCF00FD29EA /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CD701254EADCF00FD29EA /* SettingsViewController.xib */; };
+		8442B7232557F24300ADAEE5 /* JsonPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442B7212557F24300ADAEE5 /* JsonPreviewController.swift */; };
+		8442B7242557F24300ADAEE5 /* JsonPreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8442B7222557F24300ADAEE5 /* JsonPreviewController.xib */; };
 		8495A0362553CE50007E1F02 /* AccountSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A0352553CE50007E1F02 /* AccountSummary.swift */; };
 		8495A0392553CE75007E1F02 /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A0382553CE75007E1F02 /* SettingsUseCase.swift */; };
 		84BEC640254D8C04007F515B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC63F254D8C04007F515B /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 		843CD6F3254E731300FD29EA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		843CD6FD254E8F9100FD29EA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		843CD701254EADCF00FD29EA /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		8442B7212557F24300ADAEE5 /* JsonPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPreviewController.swift; sourceTree = "<group>"; };
+		8442B7222557F24300ADAEE5 /* JsonPreviewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JsonPreviewController.xib; sourceTree = "<group>"; };
 		8495A0352553CE50007E1F02 /* AccountSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummary.swift; sourceTree = "<group>"; };
 		8495A0382553CE75007E1F02 /* SettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
 		84BEC63F254D8C04007F515B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		842B1B6525330781002E8171 /* GAValidator */ = {
 			isa = PBXGroup;
 			children = (
+				8442B7202557F1FD00ADAEE5 /* ImportAnalytics */,
 				843CD6FC254E8F5F00FD29EA /* Extensions */,
 				84BEC66F254DE5C3007F515B /* Assets.xcassets */,
 				84BEC65E254DE53F007F515B /* Base.lproj */,
@@ -110,6 +115,15 @@
 				843CD6FD254E8F9100FD29EA /* UIView+Shadow.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8442B7202557F1FD00ADAEE5 /* ImportAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				8442B7212557F24300ADAEE5 /* JsonPreviewController.swift */,
+				8442B7222557F24300ADAEE5 /* JsonPreviewController.xib */,
+			);
+			path = ImportAnalytics;
 			sourceTree = "<group>";
 		};
 		84BEC65D254DE53F007F515B /* Trackers */ = {
@@ -223,6 +237,7 @@
 			files = (
 				84BEC666254DE53F007F515B /* LaunchScreen.storyboard in Resources */,
 				843CD703254EADCF00FD29EA /* SettingsViewController.xib in Resources */,
+				8442B7242557F24300ADAEE5 /* JsonPreviewController.xib in Resources */,
 				84BEC670254DE5C3007F515B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +318,7 @@
 				84BEC669254DE53F007F515B /* SettingsViewController1.swift in Sources */,
 				8495A0392553CE75007E1F02 /* SettingsUseCase.swift in Sources */,
 				843CD6FE254E8F9100FD29EA /* UIView+Shadow.swift in Sources */,
+				8442B7232557F24300ADAEE5 /* JsonPreviewController.swift in Sources */,
 				843CD6F4254E731400FD29EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
