@@ -1,11 +1,10 @@
 //
 //  SceneDelegate.swift
-//  TrackerValidation
+//  HostApp
 //
-//  Created by Vishun on 10/10/20.
+//  Created by Vishun on 07/11/20.
 //
 
-import GoogleSignIn
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -17,12 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        let navigation = UINavigationController(rootViewController: TrackersViewController())
-        window?.rootViewController = navigation
-        window?.makeKeyAndVisible()
-        setupGoogleSignIn()
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -35,22 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-//        guard UIPasteboard.general.types.contains("item.analytics.gavalidator") else {
-//            return
-//        }
-        debugPrint(UIPasteboard.general.types)
-        if let analytics = UIPasteboard.general.value(forPasteboardType: "item.analytics.gavalidator") as? Data{
-            debugPrint(analytics)
-            
-            do {
-                let obj = try JSONSerialization.jsonObject(with: analytics, options: .fragmentsAllowed)
-                debugPrint(obj)
-            } catch {
-                debugPrint(error)
-            }
-            let text = String(data: analytics, encoding: .utf8)
-            debugPrint(text)
-        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -69,13 +47,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-    func setupGoogleSignIn() {
-        GIDSignIn.sharedInstance().clientID = "692092518182-bnp4vfc3cbhktuqskok21sgenq0pn34n.apps.googleusercontent.com"
-        let scope = "https://www.googleapis.com/auth/analytics.readonly"
-        var scopes = GIDSignIn.sharedInstance()?.scopes ?? []
-        scopes.append(scope)
-        GIDSignIn.sharedInstance()?.scopes = scopes
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-    }
+
 }
 

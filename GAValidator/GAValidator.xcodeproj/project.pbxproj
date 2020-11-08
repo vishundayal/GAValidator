@@ -24,6 +24,19 @@
 		C863EB349FAB34C4E79E194F /* Pods_GAValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F91E911AA739B278A4260 /* Pods_GAValidator.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		84D5CEFA2555E3CE0029BE4E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24FDF832538CA2C6671034E6 /* Pods-GAValidator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAValidator.release.xcconfig"; path = "Target Support Files/Pods-GAValidator/Pods-GAValidator.release.xcconfig"; sourceTree = "<group>"; };
 		2FA3B7C47F5C8E98A0A1EA47 /* Pods-GAValidator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAValidator.debug.xcconfig"; path = "Target Support Files/Pods-GAValidator/Pods-GAValidator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +173,7 @@
 				842B1B6125330781002E8171 /* Resources */,
 				94A3E6A67B56C32154C5AA06 /* [CP] Embed Pods Frameworks */,
 				61EA7E65FCDEE6C416D44E82 /* [CP] Copy Pods Resources */,
+				84D5CEFA2555E3CE0029BE4E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
