@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JsonPreviewController" customModule="GAValidator" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="z7L-Ts-aAY" id="f73-Ri-mqF"/>
+                <outlet property="nextButton" destination="eLp-Nb-9u7" id="em8-5V-b3I"/>
                 <outlet property="scrollView" destination="nm2-9N-Hpv" id="lXd-jS-jWR"/>
                 <outlet property="textLabel" destination="XLG-BR-1Mk" id="2jI-GA-BOn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -50,6 +52,16 @@
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="43.526785714285715"/>
         </view>
+        <barButtonItem systemItem="cancel" id="z7L-Ts-aAY">
+            <connections>
+                <action selector="cancelAction" destination="-1" id="Sho-dW-XNx"/>
+            </connections>
+        </barButtonItem>
+        <barButtonItem title="Next" id="eLp-Nb-9u7">
+            <connections>
+                <action selector="nextAction" destination="-1" id="FwQ-GJ-Pjm"/>
+            </connections>
+        </barButtonItem>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -51,12 +51,48 @@ class ViewController: UIViewController {
           "eventAction" : "click - Beli Langsung on pdp"
         }
         """
-        UIPasteboard.general.setValue(addToCart, forPasteboardType: "item.analytics.gavalidator")
-//        let item = AnalyticsActivity()
-//        let fileURl = URL(fileURLWithPath: "public.analytics")
-//        let activityVC = UIActivityViewController(activityItems: [AnalyticsItemProvider(placeholderItem: "123")], applicationActivities: [])
-//            activityVC.popoverPresentationController?.sourceView = self.view
-//            self.present(activityVC, animated: true, completion: nil)
+        let purchaseEvent = """
+        {
+          "eventAction" : "official_store",
+          "shopType" : "official_store",
+          "tax" : 0,
+          "userId" : "3660643",
+          "isNewUser" : "false",
+          "shopId" : "180459",
+          "affiliation" : "Okelah Shop",
+          "event" : "ecommerce_purchase",
+          "payment_type" : "VA",
+          "sessionIris" : "aW9zLXRva29wZWRpYQ==:BF8D2C3C-AEC0-4CD3-9B3C-05C182CD80A8:1604684018",
+          "value" : 29000,
+          "transaction_id" : "627867682",
+          "gclid" : null,
+          "businessUnit" : "payment",
+          "eventCategory" : "order complete",
+          "payment_status" : "2",
+          "coupon" : "",
+          "profileId" : "TKPD_IOS",
+          "items" : [
+            {
+              "price" : 10000,
+              "item_name" : "product 17",
+              "quantity" : 1,
+              "dimension73" : "none / other",
+              "currency" : "IDR",
+              "item_brand" : "none / other",
+              "item_variant" : "",
+              "item_category" : "olahraga / lain-lain",
+              "item_id" : "851499643"
+            }
+          ],
+          "logistic_type" : "GrabExpress",
+          "currency" : "IDR",
+          "currentSite" : "tokopediamarketplace",
+          "eventLabel" : "regular checkout",
+          "shipping" : 19000,
+          "payment_id" : "826987038"
+        }
+        """
+        UIPasteboard.general.setValue(purchaseEvent, forPasteboardType: "item.analytics.gavalidator")
     }
 
 }

@@ -41,21 +41,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         debugPrint(UIPasteboard.general.types)
         if let analytics = UIPasteboard.general.value(forPasteboardType: "item.analytics.gavalidator") as? Data{
             debugPrint(analytics)
-            
             do {
                 let obj = try JSONSerialization.jsonObject(with: analytics, options: .fragmentsAllowed) as! [String : Any]
-                
-                let viewController = JsonPreviewController(json: obj)
-                self.window?.rootViewController?.present(viewController, animated: true, completion: nil)
+                showAlert(analytics: obj)
                 debugPrint(obj)
             } catch {
                 debugPrint(error)
             }
             let text = String(data: analytics, encoding: .utf8)
-            debugPrint(text)
+//            debugPrint(text)
         }
     }
-
+    func showAlert(analytics: [String:Any]) {
+        guard let nav = self.window?.rootViewController as? UINavigationController, let topController = nav.topViewController else { return }
+        let alert = UIAlertController(title: "Analytics Copied", message: "Do you want to add this analytics?", preferredStyle: .alert)
+        let noButton = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: {_ in })
+        alert.addAction(noButton)
+        let yesButton = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in
+            let viewController = JsonPreviewController(json: analytics)
+            let navController = UINavigationController(rootViewController: viewController)
+            navController.modalPresentationStyle = .fullScreen
+            topController.present(navController, animated: true, completion: nil)
+        })
+        alert.addAction(yesButton)
+        topController.present(alert, animated: true)
+    }
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
